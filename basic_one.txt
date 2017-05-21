@@ -1,19 +1,260 @@
-#############################################################
+		
+		1. Files manipulations (view, create, edit)	
+
+ |=====================================================================|
+ | 1.1	Print first 25 lines /etc/yum.conf and save result:            |
+ |       "/home/shares/basic_lab/lab1_1.txt"                           |
+ |=====================================================================|
+ | 1.2	Print last 33 lines /etc/mime.types append result:             |
+ |	"/home/shares/basic_lab/lab1_1.txt"                            |
+ |=====================================================================|
+ | 1.3	Create empty files in "/home/shares/basic_lab/                 |
+ |	file names are: "schedule_employee_W_day_N.txt"                |
+ |	(N = 1,2,3,4,5,6,7  W= Mon,Thu,Wed,Thu,Fri,Sat,Sun             |
+ |=====================================================================|
+ | 1.4	Look up the man pages for "ls", how turn on/off color          |
+ |=====================================================================|
+ | 1.5	Copy file "/usr/bin/pinentry" to  "/home/shares/basic_lab/",   |
+ |	use any editor and remove all line havinig  this pattern       |
+ |	"PINENTRY_BINARY". Find line with pattern                      |
+ |	"xprop -root | grep "^KDE_FULL_SESSION"" and copy 5 times.     |
+ |=====================================================================|
+
+		2. Collect system info
+
+ |=====================================================================
+ | 2.1	Print system information (kernel version, hostname ) 
+ |	of your system and save result:
+ |	"/home/shares/basic_lab/lab2_1.txt"   
+ |=====================================================================
+ | 2.2	Print CPU information of your system and save result:
+ |	"/home/shares/basic_lab/lab2_2.txt"   
+ |=====================================================================
+ | 2.3	Print Block devices, storage devices & disks etc
+ |	information of your system and save result:
+ |	"/home/shares/basic_lab/lab2_3.txt"   
+ |=====================================================================
+ | 2.4	Print how long the system has been running, users,  
+ |	load information and save result:
+ |	"/home/shares/basic_lab/lab2_4.txt"  
+ |===========================================================
+ | 2.5	Print USB devices information of your system 
+ |	and save result:"/home/shares/basic_lab/lab2_5.txt" 			
+ |===========================================================
+ | 2.6	Print file system partitions info of your system 
+ |	and save result:"/home/shares/basic_lab/lab2_6.txt" 
+ |===========================================================
+ | 2.7	Print memory, SWAP info of your system 
+ |	and save result:"/home/shares/basic_lab/lab2_7.txt" 
+ |===========================================================
+ | 2.8	Print Network, system ports and socket info
+ |	and save result:"/home/shares/basic_lab/lab2_8.txt" 
+ |===========================================================
+ | 2.9	Print / View process info, file space usage
+ |	and save result:"/home/shares/basic_lab/lab2_9.txt" 
+ |===========================================================
+ | 2.10	Print / Display the list of running services
+ |	and save result:"/home/shares/basic_lab/lab2_10.txt" 
+ |===========================================================
 
 
-1.1  print first 25 lines  /etc/yum.conf    and save result "/home/shares/basic_lab/lab1_1.txt"
 
-1.2  print last 33 lines  /etc/mime.types   append result "/home/shares/basic_lab/lab1_1.txt"
 
-1.3  Create empty files in "/home/shares/basic_lab/  
-	file names are on_call_schedule_employee_W_day_N.txt  
-	were N = 1,2,3,4,5,6,7  and   W = Mon, Thu, Wed, Thu, Fri, Sat, Sun
 
-1.4  Look up the man pages for "ls", how turn on/off color
 
-1.5  Copy file " /usr/bin/pinentry " to  " /home/shares/basic_lab/ ", use any editor , and remove all line havinig  this pattern  " PINENTRY_BINARY ".
-	find line with pattern -> " xprop -root | grep "^KDE_FULL_SESSION"  " and copy 5 times.
+===========
+FTP - Enable FTP on desktop2 permanently and test it works
+Enable FTP service on your stystem. Anonymous user&#39;s can download options is avilable on
+your server
+===========   
+Find the string "nobody" in /etc/passwd and store it in /root/nobody.txt
+==============
+Use the appropriate command to locate all files on your server that have a size greater than 100
+MB and store a list of their names in the file /root/bigfile
+===============
+Search
+Create an user sandra . Find all files owned by sandra and write them to /root/sandra_files
+Search for a particular string in /etc/nsswitch.conf and write results to /root/nsswitch_patterns
+Find the file whose owner is anton and copy the file to given path of /root/anton.user
+=====================
+NTP
+Configure desktop1 to be an NTP client of allinone.cloudnine.local [ use chrony ]
+Configure your system so that it is an NTP client of allinone.cloudnine.local 
+server allinone.cloudnine.local 
 
-1.6
 
-1.7 
+================================
+ACLs
+
+Copy the file /etc/nsswitch.conf to /var/tmp. Configure the permission of
+
+/var/tmp/nsswitch.conf using ACLs so that:
+
+owner, group is root.
+
+Copy the file /etc/nsswitch.conf to /var/tmp. Configure the permission of
+
+/var/tmp/nsswitch.conf so that:
+
+i) The file /var/tmp/nsswitch.conf is owned by root user.
+
+ii) The file /var/tmp/nsswitch.conf belongs to the group root.
+
+iii) The file /var/tmp/nsswitch.conf should not be executable by anyone.
+
+iv) The user kristine is able to read and write /var/tmp/nsswitch.conf.
+
+v) The user thomas can neither read nor write /var/tmp/nsswitch.conf.
+
+vi) All other users (current / future) have the ability to read /var/tmp/nsswitch.conf
+
+The file /var/tmp/nsswitch.conf should not be executable by anyone.
+
+The user henry is able to read and write by /var/tmp/nsswitch.conf.
+
+The user nikita can neither read nor write /var/tmp/nsswitch.conf.
+
+All other users (current / future) have the ability to read /var/tmp/nsswitch.conf
+
+
+================================
+
+Ownership &amp; Permission
+
+There is a requirement for a directory called /regular/sysadmin. Make sure it belongs to the
+
+group sysadmin. Only sysadmin group can read,write,execute in this directory. All files
+
+created within this directory should automatically have group sysadmin
+
+Create a joint/shared directory /regular/sysadmin with the these attributes:
+
+
+================================
+
+Firewall
+
+Set up a firewall such that the SSH process can be reached on your server.
+
+================================
+
+Logging
+
+Configure logging in such a way that all log messages with a priority of warn and higher are
+
+written to the /var/log/warnings file
+
+================================
+
+Generate an SSH key pair for the user root. Copy the appropriate key over to your host
+
+computer so that you can log in to the host computer without having to enter a password or passphrase.
+
+================================
+User Management
+As a Sys Admin, you are asked to create new users, groups and assign these users to particular
+groups. How would you go about this ?
+Create the following users,groups and group memberships:
+a) A group named finance.
+b) A user anton who belongs to finance as a secondary group.
+c) A user pradeep who belongs to finance as a secondary group.
+d) user corey not a member of finance and NOLOGIN
+Create a new user called regal with UID 1459
+Create a new user named regal with UID 1459
+Create the users lisa and lori. Set their passwords to expire after 90 days
+================================
+
+Increase the swap space on desktop2
+
+create a swap partition 256MB size. 
+
+================================
+LDAP
+Setup ldap on desktop1 and desktop2 [ use allinone.cloudnine.local as the master ]
+LDAP domain = cloudnine.local LDAP Master = by allinone.cloudnine.local
+i) should be able to log into your desktop1 system using examuser1
+ii) examuser1 user has a password of dodge
+We are not using TLS in this mock exam. Students should know how to provide the TLS cert in the 
+================================
+
+Configure AUTOFS to mount the LDAP user examuser1, examuser2
+
+i) allinone.cloudnine.local (192.168.X.S) NFS -exports /home to your system,
+ii) examuser1&#39;s home directory is allinone.cloudnine.local:/home/examuser1
+iii) examuser1&#39;s home directory should be automounted locally mapped to /home as /home/examuser1
+iv) home directories must be writable by their users.
+
+================================
+Partitions
+A request comes in for an extra partition. What will you do as a sysadmin ?
+Create a new 200 MB physical partition mounted on /mnt/part01 with xfs filesystem.
+
+================================
+
+Kernel update
+Install a kernel upgrade. After installing it, you should be able to select the old kernel as well as
+the new kernel while botting
+Install the kernel update from http://192.168.2.79/repos/centos/7/
+================================
+
+Web Server Configuration
+
+Configure an Apache Web Server (virtual hosts)
+Create a web server to include a host for the site
+http://allinone.example.com/, then perform the following steps:
+
+
+================================
+
+The initial size of that logical volume statscollect is 800MB. Successfully reduce the size of the
+logical volume to 500MB without losing any data.
+Following is based on the fact that it is an ext4 file system
+================================
+Create a logical volume and mount it persistently [ ext4 ]
+Create logical volume statscollect (50 extents) on statsvg volume group
+(i) the statsvg volume group = 16MiB
+(ii)mount the logical volume under mount point /mnt/statscollect
+================================
+LVM
+You’re running out of space on / on desktop1. What are the remedial measures you’ll take ?
+Increase the logical volume size of 17 extents on / on desktop1
+================================
+Scheduled Jobs
+A scheduled job needs to be setup for a particular user.
+Henry has a job scheduled at 3.20 PM which displays &quot;hi there&quot;.
+================================
+SELinux
+Ensure that SELinux is in Enforcing mode.
+================================
+Networking
+Make sure that the networking configuration on the VM is setup correctly. This includes DNS
+and routing settings.
+
+Domain name: cloudnine.local
+Network 192.168.10.0/255.255.255.0  
+
+Hostname allinone.cloudnine.local   
+
+Server IP Address 192.168.10.1     
+Desktop-1 IP Address 192.168.10.11 
+Desktop-2 IP Address 192.168.10.12
+
+Netmask 255.255.255.0    
+Gateway 192.168.10.1    
+Nameserver 192.168.10.1  
+
+================================
+root password for server and desktop1, desktop2 should be set to “changeme”
+================================
+
+
+
+================================
+
+
+
+================================
+
+
+
+
