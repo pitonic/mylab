@@ -1,5 +1,5 @@
 #!/bin/bash
-# A menu driven shell script sample template 
+# mylab v_0.1 
 ## ----------------------------------
 # Step #1: Define variables
 # ----------------------------------
@@ -16,7 +16,7 @@ pause(){
 }
 
 one(){
-	less climenu.sh
+	less basic_one.txt
         pause
 }
  
@@ -47,10 +47,12 @@ eleven(){
 # function to display menus
 show_menus() {
 	clear
-	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"	
+	echo " __________________________________ "
+	echo "|                                  |"	
 	echo "|         BASIC - tasks            |"
-	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        echo "|  1. Create files                 |"
+	echo "|__________________________________|"
+        echo "|                                  |"
+        echo "|  1. Files manipulations          |"
         echo "|  2. Collect system info          |"
         echo "|  3. Edit password expiry info    |"
 	echo "|  4. IP & Host setup              |"
@@ -60,17 +62,21 @@ show_menus() {
 	echo "|  8. Configire cron job           |"
 	echo "|  9. configure repository         |"
 	echo "| 10. SSH & password less          |"
-	echo "| 5.  Rsyslog setup                |"
-	echo "| 5. Ftp setup                     |"
-	echo "| 5. Web server setup              |"
-	echo "| 6. Maria install  "
-	echo "| 6. iptables   "
-	echo "| 6. CPU, Memory, Space , etc  "
-	echo "| 6. Archive Tar etc   "
-	echo "| 6. Maria install  "
-	echo "| 6. Maria install  "
-	echo "| 6. Maria install  "
-	echo "| 7. Exit"
+	echo "| 11.  Rsyslog setup               |"
+	echo "| 12. Ftp setup                    |"
+	echo "| 13. Web server setup             |"
+	echo "| 14. Maria install                |"
+	echo "| 15. iptables                     |"
+	echo "| 16. CPU, Memory, Space , etc     |"
+	echo "| 17. Archive Tar etc              |"
+	echo "| 18. Maria install                |"
+	echo "| 19. Maria install                |"
+	echo "| 20. Maria install                |"
+        echo "|__________________________________|"
+        echo "|                                  |"
+	echo "|  0. Exit                         |"
+	echo "|__________________________________|"
+        echo "                                    "
 }
 # read input from the keyboard and take a action
 # invoke the one() when the user select 1 from the menu option.
@@ -78,7 +84,7 @@ show_menus() {
 # Exit when user the user select 3 form the menu option.
 read_options(){
 	local choice
-	read -p "Enter choice [ 1 - 13] " choice
+	read -p "Enter choice [ 0 - 20] " choice
 	case $choice in
 		1) one ;;
 		2) two ;;
@@ -88,7 +94,7 @@ read_options(){
 		6) six ;;
 		10) ten ;;
 		11) eleven ;;
-		9) exit 0;;
+		0) exit 0;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
 }
