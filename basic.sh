@@ -52,7 +52,7 @@ show_menus() {
 	echo "|         BASIC - tasks            |"
 	echo "|__________________________________|"
         echo "|                                  |"
-        echo "|  1. Files manipulations          |"
+        echo "|  1. MAN(manual), files etc       |"
         echo "|  2. Collect system info          |"
         echo "|  3. Edit password expiry info    |"
 	echo "|  4. IP & Host setup              |"
