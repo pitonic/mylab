@@ -7,6 +7,12 @@ EDITOR=vim
 PASSWD=/etc/passwd
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
+
+GREEN='\033[0;42;30m'
+#STD='\033[0;0;39m'
+
+
+
  
 # ----------------------------------
 # Step #2: User defined function
@@ -16,17 +22,33 @@ pause(){
 }
 
 one(){
-	less basic_one.txt
+	less basic_tasks/1.txt
         pause
 }
  
 # do something in two()
 two(){
-	./7cent.sh
+	less basic_tasks/2.txt
         pause
 }
 
+# do something in two()
+three(){
+        less basic_tasks/3.txt
+        pause
+}
 
+# do something in two()
+four(){
+        ./7cent.sh
+        pause
+}
+
+# do something in two()
+five(){
+        ./7cent.sh
+        pause
+}
 
 
 ten(){
@@ -40,20 +62,26 @@ eleven(){
 }
 
 
-
-
-
- 
 # function to display menus
 show_menus() {
+
+
+
 	clear
 	echo " __________________________________ "
 	echo "|                                  |"	
 	echo "|         BASIC - tasks            |"
 	echo "|__________________________________|"
         echo "|                                  |"
-        echo "|  1. MAN(manual), files etc       |"
-        echo "|  2. Collect system info          |"
+
+basic_checks/1.sh &> /dev/null  && \
+     echo -e "| ${GREEN} 1. MAN(manual), files etc ${STD}      |"\
+     || echo "|  1. MAN(manual), files etc       |"
+
+basic_checks/2.sh &> /dev/null  && \
+     echo -e "| ${GREEN} 2. Collect system info  ${STD}        |"\
+     || echo "|  2. Collect system info          |"
+
         echo "|  3. Edit password expiry info    |"
 	echo "|  4. IP & Host setup              |"
 	echo "|  5. Create Users & Groups        |"
@@ -74,7 +102,8 @@ show_menus() {
 	echo "| 20. Maria install                |"
         echo "|__________________________________|"
         echo "|                                  |"
-	echo "|  0. Exit                         |"
+        echo "|  r. Refresh ( menu )             |"
+	echo "|  q. Quit                         |"
 	echo "|__________________________________|"
         echo "                                    "
 }
@@ -84,17 +113,20 @@ show_menus() {
 # Exit when user the user select 3 form the menu option.
 read_options(){
 	local choice
-	read -p "Enter choice [ 0 - 20] " choice
+	read -p "Enter choice [ 1 - 20] " choice
 	case $choice in
 		1) one ;;
 		2) two ;;
-		3) two ;;
-		4) two ;;
-		5) two ;;
+		3) three ;;
+		4) four ;;
+		5) five ;;
 		6) six ;;
 		10) ten ;;
 		11) eleven ;;
-		0) exit 0;;
+                r) echo -n "Refreshing progress." && sleep 1 &&\
+		 echo -n "." && sleep 1 &&\
+		 echo -n "." && sleep 1 ;;
+		q) echo " exit ... Done.  Bye, see you later   "  &&  exit 0;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
 }

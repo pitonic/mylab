@@ -1,0 +1,59 @@
+
+		2. Collect system info
+
+ |=====================================================================|
+ |		 						       |
+ | 2.1	Print system information (kernel version, hostname )           |
+ |	of your system and save result:                                |
+ |	"/home/shares/basic_lab/lab2_1.txt"                            |
+ |		 						       |
+ |=====================================================================|
+ |		 						       |
+ | 2.2 	Print CPU information of your system and save result:          |
+ |	"/home/shares/basic_lab/lab2_2.txt"                            |
+ |		 						       |
+ |=====================================================================|
+ | 		 						       |
+ | 2.3	Print Block devices, storage devices & disks etc               |
+ |	information of your system and save result:                    |
+ |	"/home/shares/basic_lab/lab2_3.txt"                            |
+ |		 						       |
+ |=====================================================================|
+ | 		 						       |
+ | 2.4	Print how long the system has been running, users,             |
+ |	load information and save result:                              |
+ |	"/home/shares/basic_lab/lab2_4.txt"                            |
+ |		 						       |
+ |=====================================================================|
+ | 		 						       |
+ | 2.5	Print USB devices information of your system                   |
+ |	and save result:"/home/shares/basic_lab/lab2_5.txt"            |	
+ |		 						       |
+ |=====================================================================|
+ |		 						       |
+ | 2.6	Print file system partitions info of your system               |
+ |	and save result:"/home/shares/basic_lab/lab2_6.txt"            |
+ |		 						       |
+ |=====================================================================|
+ | 		 						       |
+ | 2.7	Print memory, SWAP info of your system         		       |
+ |	and save result:"/home/shares/basic_lab/lab2_7.txt"            |
+ |		 						       |
+ |=====================================================================|
+ |		 						       |
+ | 2.8	Print Network, system ports and socket info        	       |
+ |	and save result:"/home/shares/basic_lab/lab2_8.txt"            |
+ |		 						       |
+ |=====================================================================|
+ |		 						       |
+ | 2.9	Print / View process info, file space usage       	       |
+ |	and save result:"/home/shares/basic_lab/lab2_9.txt"            |
+ |		 						       |
+ |=====================================================================|
+ |		 						       |
+ | 2.10	Print / Display the list of running services       	       |
+ |	and save result:"/home/shares/basic_lab/lab2_10.txt"           |
+ |		 						       |
+ |=====================================================================|
+
+  q - Quit
