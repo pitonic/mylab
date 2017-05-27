@@ -11,7 +11,7 @@ STD='\033[0;0;39m'
 GREEN='\033[0;42;30m'
 #STD='\033[0;0;39m'
 
-
+CHECK1=$(basic_checks/11.sh |grep DONE| wc -l | grep 5)
 
  
 # ----------------------------------
@@ -21,11 +21,29 @@ pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
 }
 
+brbr(){
+  echo " good luck .." 
+  exit
+}
+
+
 one(){
-	less basic_tasks/1.txt
-        pause
+  	basic_checks/11.sh      	
+         
+	if [ "$CHECK1" ] ; then  
+	    echo "check"
+            pause 
+        else  
+	    echo "brake"
+            brbr
+                
+	fi
+
 }
  
+
+
+
 # do something in two()
 two(){
 	less basic_tasks/2.txt
@@ -73,8 +91,7 @@ show_menus() {
 	echo "|         BASIC - tasks            |"
 	echo "|__________________________________|"
         echo "|                                  |"
-
-basic_checks/1.sh &> /dev/null  && \
+basic_checks/11.sh |grep DONE| wc -l | grep 5 &> /dev/null  && \
      echo -e "| ${GREEN} 1. MAN(manual), files etc ${STD}      |"\
      || echo "|  1. MAN(manual), files etc       |"
 

@@ -7,7 +7,7 @@
  |	util "man" as Equivalent to util- "apropos" (Search the	short  |
  |	manual page descriptions for keywords and display any matches) |
  |		 						       |
- |	Read manual for "BASH" and read more about:		       | 
+ |	Read manual for "BASH" and read more about:		       |
  |	"Pipelines" and "Redirections" 				       |
  |		 						       |
  |	Please find utils for "matching" pattern.                      |

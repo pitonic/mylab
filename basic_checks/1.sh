@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -n " cheking task -> 1.1 " && \
-less /home/shares/basic_lab/lab1_1.txt | grep Example > /dev/null && \
+less /home/shares/basic_lab/lab1_1.txte | grep Example &> /dev/null && \
 echo ".... Succsessful, task 1.1 - DONE " && \
 
 echo -n " cheking task -> 1.2 " && \
