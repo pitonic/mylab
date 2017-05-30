@@ -12,6 +12,7 @@ GREEN='\033[0;42;30m'
 #STD='\033[0;0;39m'
 
 CHECK1=$(basic_checks/11.sh |grep DONE| wc -l | grep 5)
+CHECK2=$(basic_checks/2.sh |grep DONE| wc -l | grep 10)
 
  
 # ----------------------------------
@@ -26,7 +27,6 @@ brbr(){
   exit
 }
 
-
 one(){
   	basic_checks/11.sh      	
          
@@ -34,23 +34,26 @@ one(){
 	    echo "check"
             pause 
         else  
-	    echo "brake"
-            brbr
+	    brbr
                 
 	fi
-
 }
- 
 
-
-
-# do something in two()
 two(){
-	less basic_tasks/2.txt
-        pause
+	
+        basic_checks/2.sh
+
+        if [ "$CHECK2" ] ; then
+            echo "check"
+            pause
+        else
+            brbr
+
+        fi
+
 }
 
-# do something in two()
+
 three(){
         less basic_tasks/3.txt
         pause
@@ -95,7 +98,7 @@ basic_checks/11.sh |grep DONE| wc -l | grep 5 &> /dev/null  && \
      echo -e "| ${GREEN} 1. MAN(manual), files etc ${STD}      |"\
      || echo "|  1. MAN(manual), files etc       |"
 
-basic_checks/2.sh &> /dev/null  && \
+basic_checks/2.sh |grep DONE| wc -l | grep 10 &> /dev/null  && \
      echo -e "| ${GREEN} 2. Collect system info  ${STD}        |"\
      || echo "|  2. Collect system info          |"
 
