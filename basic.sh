@@ -11,7 +11,7 @@ STD='\033[0;0;39m'
 GREEN='\033[0;42;30m'
 #STD='\033[0;0;39m'
 
-CHECK1=$(basic_checks/11.sh |grep DONE| wc -l | grep 5)
+CHECK1=$(basic_checks/1.sh |grep DONE| wc -l | grep 5)
 CHECK2=$(basic_checks/2.sh |grep DONE| wc -l | grep 10)
 
  
@@ -23,15 +23,20 @@ pause(){
 }
 
 brbr(){
-  echo " good luck .." 
+  echo " "
+  echo " good luck .."
+  echo " " 
   exit
 }
 
 one(){
-  	basic_checks/11.sh      	
+  	basic_checks/1.sh      	
          
 	if [ "$CHECK1" ] ; then  
-	    echo "check"
+            echo " "
+            echo " \"The secret of getting ahead is getting started.\" -Mark Twain "
+            echo " "
+
             pause 
         else  
 	    brbr
@@ -44,7 +49,10 @@ two(){
         basic_checks/2.sh
 
         if [ "$CHECK2" ] ; then
-            echo "check"
+            echo " "
+            echo " Practice makes perfect "
+            echo " "
+
             pause
         else
             brbr
@@ -94,7 +102,7 @@ show_menus() {
 	echo "|         BASIC - tasks            |"
 	echo "|__________________________________|"
         echo "|                                  |"
-basic_checks/11.sh |grep DONE| wc -l | grep 5 &> /dev/null  && \
+basic_checks/1.sh |grep DONE| wc -l | grep 5 &> /dev/null  && \
      echo -e "| ${GREEN} 1. MAN(manual), files etc ${STD}      |"\
      || echo "|  1. MAN(manual), files etc       |"
 
