@@ -19,6 +19,27 @@ TEST4=$(\
 TEST5=$( \
 [ -f "/home/shares/basic_lab/lab2_5.txt" ] && if [ $(lines=`   less /etc/passwd |grep bash | awk -F ":" '{print $1}' `; for line in $lines; do grep "$line"  /home/shares/basic_lab/lab2_5.txt; done |wc -l) -gt 0 ] ; then echo "ok" ; fi )
 
+TEST6=$( \
+[ -f "/home/shares/basic_lab/lab2_6.txt" ] && if [ $[ $(less /home/shares/basic_lab/lab2_6.txt |wc -l) - $( systemctl list-unit-files -t service --state=enabled  | awk '/.service/ && /enabled/'|wc -l)] -le 3  ]  ; then echo "ok" ; fi )
+
+TEST7=$( \
+[ -f "/home/shares/basic_lab/lab2_7.txt" ] && \
+if [ $[ $(less /home/shares/basic_lab/lab2_7.txt | egrep -i swap |awk -F " " '{print $2}'  ) - $( free -w | egrep -i swap |awk -F " " '{print $2}'  )] -eq 0  ] &&  [ $[ $(less /home/shares/basic_lab/lab2_7.txt | egrep -i  mem |awk -F " " '{print $2}'  ) - $( free -w | egrep -i  mem |awk -F " " '{print $2}'  )] -eq 0  ]  ; then echo "ok" ; fi )
+
+TEST8=$( \
+[ -f "/home/shares/basic_lab/lab2_8.txt" ] && less /home/shares/basic_lab/lab2_8.txt | awk '/tcp/ && /LISTEN /' )
+
+
+TEST9=$( \
+[ -f "/home/shares/basic_lab/lab2_9.txt" ] && less /home/shares/basic_lab/lab2_9.txt | grep PID| grep CPU| grep RSS| grep USER  > /dev/null && less /home/shares/basic_lab/lab2_9.txt |wc -l| grep 6 )
+
+
+TEST10=$( \
+[ -f "/home/shares/basic_lab/lab2_10.txt" ] &&  if [ $[ $(less /home/shares/basic_lab/lab2_10.txt | wc -l  ) - $( grep error /var/log/messages* | wc -l )] -eq 0  ] ; then echo "ok" ; fi )  
+
+
+
+
 
 
 
@@ -55,42 +76,42 @@ task-2-5(){
         echo "  "
         echo "  Exercise 2.5"
         echo "  "
-        echo "    Find out which users have access to System \(able to login via SSH, Terminal, or even via the su comman \) and  save result: /home/shares/basic_lab/lab2_5.txt"
+        echo "    Find out which users have access to System ( able to login via SSH or even via the su command etc) and  save result: /home/shares/basic_lab/lab2_5.txt"
         echo "  "
 }
 task-2-6(){
         echo "  "
         echo "  Exercise 2.6"
         echo "  "
-        echo "    Print file system partitions info of your system and save result: /home/shares/basic_lab/lab2_6.txt "
+        echo "    List the "ENABLED" service units in your system and save result: /home/shares/basic_lab/lab2_6.txt "
         echo "  "
 }
 task-2-7(){
         echo "  "
         echo "  Exercise 2.7"
         echo "  "
-        echo "    Print memory, SWAP info of your system and save result: /home/shares/basic_lab/lab2_7.txt "
+        echo "    Print Memory, SWAP info ( wide output ) of your system and save result: /home/shares/basic_lab/lab2_7.txt "
         echo "  "
 }
 task-2-8(){
         echo "  "
         echo "  Exercise 2.8"
         echo "  "
-        echo "    Print Network, system ports and socket info and save result: /home/shares/basic_lab/lab2_8.txt "
+        echo "    Print Network ports(numeric) and listening sockets info and save result: /home/shares/basic_lab/lab2_8.txt "
         echo "  "
 }
 task-2-9(){
         echo "  "
         echo "  Exercise 2.9"
         echo "  "
-        echo "    Print / View process info, file space usage and save result: /home/shares/basic_lab/lab2_9.txt "
+        echo "    Print / View process info: (PID, USER, CPU and sort it by RSS memory) and save top 5 result: /home/shares/basic_lab/lab2_9.txt "
         echo "  "
 }
 task-2-10(){
         echo "  "
         echo "  Exercise 2.10"
         echo "  "
-        echo "    Print / Display the list of running services and save result: /home/shares/basic_lab/lab2_10.txt"
+        echo "     Please check for "any  errors"   /var/log/messages (including old)  and save result: /home/shares/basic_lab/lab2_10.txt"
         echo "  "
 }
 
@@ -127,7 +148,7 @@ if  [ "$TEST1" ] ; then
                   if  [ "$TEST10" ] ; then
                     echo "        "
                     echo -e "task 2.10 - ${GREEN} DONE  ${STD}"
-                  else
+		  else
                     task-2-10
                   fi
                 else
