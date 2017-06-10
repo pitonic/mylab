@@ -13,6 +13,7 @@ GREEN='\033[0;42;30m'
 
 CHECK1=$(basic_checks/1.sh |grep DONE| wc -l | grep 5)
 CHECK2=$(basic_checks/2.sh |grep DONE| wc -l | grep 10)
+CHECK333=$(basic_checks/2.sh |grep DONE| wc -l | grep 10)
 
  
 # ----------------------------------
@@ -36,7 +37,6 @@ one(){
             echo " "
             echo " \"The secret of getting ahead is getting started.\" -Mark Twain "
             echo " "
-
             pause 
         else  
 	    brbr
@@ -50,9 +50,8 @@ two(){
 
         if [ "$CHECK2" ] ; then
             echo " "
-            echo " Practice makes perfect "
+            echo " “Success is never final. Failure is never fatal. It is courage that counts.” -Winston Churchill "
             echo " "
-
             pause
         else
             brbr
@@ -63,8 +62,23 @@ two(){
 
 
 three(){
-        less basic_tasks/3.txt
-        pause
+     
+        basic_checks/3.sh
+
+        if [ "$CHECK3" ] ; then
+            echo " "
+            echo " “Computers are useless.  They can only give you answers.” - Pablo Picasso "
+            echo " "
+            pause
+        else
+            brbr
+
+        fi
+
+
+
+
+    
 }
 
 # do something in two()
@@ -110,7 +124,11 @@ basic_checks/2.sh |grep DONE| wc -l | grep 10 &> /dev/null  && \
      echo -e "| ${GREEN} 2. Collect system info  ${STD}        |"\
      || echo "|  2. Collect system info          |"
 
-        echo "|  3. Edit password expiry info    |"
+basic_checks/3.sh |grep DONE| wc -l | grep 5 &> /dev/null  && \
+     echo -e "| ${GREEN} 3. Edit password expiry info  ${STD}        |"\
+     || echo "|  3. Edit password expiry info    |"
+
+
 	echo "|  4. IP & Host setup              |"
 	echo "|  5. Create Users & Groups        |"
 	echo "|  6. Create colaborated folder    |"

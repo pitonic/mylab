@@ -7,7 +7,7 @@ TEST1=$(\
 [ -f "/home/shares/basic_lab/lab2_1.txt" ] && cat /home/shares/basic_lab/lab2_1.txt| grep `uname `| grep `uname -i` | grep `uname -i` )
 
 TEST2=$(\
-[ -f "/home/shares/basic_lab/lab2_2.txt" ] &&  lscpu |grep Xeon | grep X5647 )
+[ -f "/home/shares/basic_lab/lab2_2.txt" ] &&  lscpu |grep Model\ name: )
 
 TEST3=$(\
 [ -f "/home/shares/basic_lab/lab2_3.txt" ] &&  if [ $(lines=`ls /sys/block/`; for line in $lines;\
