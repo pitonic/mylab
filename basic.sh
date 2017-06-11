@@ -11,9 +11,89 @@ STD='\033[0;0;39m'
 GREEN='\033[0;42;30m'
 #STD='\033[0;0;39m'
 
-CHECK1=$(basic_checks/1.sh |grep DONE| wc -l | grep 5)
-CHECK2=$(basic_checks/2.sh |grep DONE| wc -l | grep 10)
-CHECK333=$(basic_checks/2.sh |grep DONE| wc -l | grep 10)
+
+
+echo -n "."
+CHECK1=$( basic_checks/1.sh |grep DONE| wc -l | grep 5)
+if [ "$CHECK1" ] ; then
+    LINE1="$GREEN"
+else 
+    LINE1="$STD"
+fi
+
+echo -n "." 
+CHECK2=$( basic_checks/2.sh |grep DONE| wc -l | grep 10)
+if [ "$CHECK2" ] ; then
+    LINE2="$GREEN"
+else
+    LINE2="$STD"
+fi
+
+
+echo -n "."
+CHECK3=$( basic_checks/3.sh |grep DONE| wc -l | grep 5)
+if [ "$CHECK3" ] ; then
+    LINE3="$GREEN"
+else
+    LINE3="$STD"
+fi
+
+
+echo -n "."
+CHECK4=$( basic_checks/4.sh |grep DONE| wc -l | grep 5)
+if [ "$CHECK4" ] ; then
+    LINE4=${GREEN}
+else
+    LINE4=${STD}
+fi
+
+
+echo -n "."
+CHECK5=$( basic_checks/5.sh |grep DONE| wc -l | grep 5)
+if [ "$CHECK5" ] ; then
+    LINE5=${GREEN}
+else
+    LINE5=${STD}
+fi
+
+
+echo -n "."
+CHECK6=$( basic_checks/6.sh |grep DONE| wc -l | grep 5)
+if [ "$CHECK1" ] ; then
+    LINE6=${GREEN}
+else
+    LINE6=${STD}
+fi
+
+
+echo -n "."
+CHECK7=$( basic_checks/7.sh |grep DONE| wc -l | grep 5)
+if [ "$CHECK1" ] ; then
+    LINE7=${GREEN}
+else
+    LINE7=${STD}
+fi
+
+
+echo -n "."
+CHECK8=$( basic_checks/8.sh |grep DONE| wc -l | grep 5)
+if [ "$CHECK1" ] ; then
+    LINE8=${GREEN}
+else
+    LINE8=${STD}
+fi
+
+
+echo -n "."
+CHECK9=$( basic_checks/9.sh |grep DONE| wc -l | grep 5)
+if [ "$CHECK1" ] ; then
+    LINE9=${GREEN}
+else
+    LINE9=${STD}
+fi
+
+
+echo -n "*"
 
  
 # ----------------------------------
@@ -72,37 +152,88 @@ three(){
             pause
         else
             brbr
+        fi
+}
+
+four(){
+
+        basic_checks/4.sh
+
+        if [ "$CHECK4" ] ; then
+            echo " "
+            echo " “Computers are useless.  They can only give you answers.” - Pablo Picasso "
+            echo " "
+            pause
+        else
+            brbr
 
         fi
 
-
-
-
-    
 }
-
-# do something in two()
-four(){
-        ./7cent.sh
-        pause
-}
-
-# do something in two()
 five(){
-        ./7cent.sh
-        pause
+
+        basic_checks/5.sh
+
+        if [ "$CHECK5" ] ; then
+            echo " "
+            echo " “Computers are useless.  They can only give you answers.” - Pablo Picasso "
+            echo " "
+            pause
+        else
+            brbr
+
+        fi
+
+}
+six(){
+
+        basic_checks/6.sh
+
+        if [ "$CHECK6" ] ; then
+            echo " "
+            echo " “Computers are useless.  They can only give you answers.” - Pablo Picasso "
+            echo " "
+            pause
+        else
+            brbr
+
+        fi
+
+}
+seven(){
+
+        basic_checks/7.sh
+
+        if [ "$CHECK7" ] ; then
+            echo " "
+            echo " “Computers are useless.  They can only give you answers.” - Pablo Picasso "
+            echo " "
+            pause
+        else
+            brbr
+
+        fi
+
+}
+eight(){
+
+        basic_checks/8.sh
+
+        if [ "$CHECK8" ] ; then
+            echo " "
+            echo " “Computers are useless.  They can only give you answers.” - Pablo Picasso "
+            echo " "
+            pause
+        else
+            brbr
+
+        fi
+
 }
 
 
-ten(){
-        echo " ten 10 "
-        pause
-}
 
-eleven(){
-        echo " odinaccati 11 "
-        pause
-}
+
 
 
 # function to display menus
@@ -116,18 +247,9 @@ show_menus() {
 	echo "|         BASIC - tasks            |"
 	echo "|__________________________________|"
         echo "|                                  |"
-basic_checks/1.sh |grep DONE| wc -l | grep 5 &> /dev/null  && \
-     echo -e "| ${GREEN} 1. MAN(manual), files etc ${STD}      |"\
-     || echo "|  1. MAN(manual), files etc       |"
-
-basic_checks/2.sh |grep DONE| wc -l | grep 10 &> /dev/null  && \
-     echo -e "| ${GREEN} 2. Collect system info  ${STD}        |"\
-     || echo "|  2. Collect system info          |"
-
-basic_checks/3.sh |grep DONE| wc -l | grep 5 &> /dev/null  && \
-     echo -e "| ${GREEN} 3. Edit password expiry info  ${STD}        |"\
-     || echo "|  3. Edit password expiry info    |"
-
+     echo -e "|${LINE1} 1. MAN, files etc                ${STD}|"
+     echo -e "|${LINE2} 2. Collect system info           ${STD}|"
+     echo -e "|${LINE3} 3. Users, passwords, groups..    ${STD}|"
 
 	echo "|  4. IP & Host setup              |"
 	echo "|  5. Create Users & Groups        |"
@@ -141,7 +263,7 @@ basic_checks/3.sh |grep DONE| wc -l | grep 5 &> /dev/null  && \
 	echo "| 13. Web server setup             |"
 	echo "| 14. Maria install                |"
 	echo "| 15. iptables                     |"
-	echo "| 16. CPU, Memory, Space , etc     |"
+	echo "| 16.                              |"
 	echo "| 17. Archive Tar etc              |"
 	echo "| 18. Maria install                |"
 	echo "| 19. Maria install                |"
