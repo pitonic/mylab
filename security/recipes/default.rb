@@ -1,4 +1,4 @@
-# Security fixes 
+# Security fixes. 
 case node['platform']
 when 'ubuntu'
   include_recipe 'security::linux-icmp-redirect'
